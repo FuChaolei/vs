@@ -1,0 +1,5 @@
+﻿  ce.cpp
+d:\desktop\vsc++\ceshi\ceshi\ce.cpp(9): warning C4018: “<”: 有符号/无符号不匹配
+d:\desktop\vsc++\ceshi\ceshi\ce.cpp(41): warning C4018: “<”: 有符号/无符号不匹配
+d:\desktop\vsc++\ceshi\ceshi\ce.cpp(54): warning C4018: “<”: 有符号/无符号不匹配
+  ceshi.vcxproj -> D:\Desktop\vsc++\ceshi\Debug\ceshi.exe
