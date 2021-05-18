@@ -28,6 +28,14 @@
 			"unordered_map": "cpp",
 			"map": "cpp",
 			"string": "cpp",
-			"utility": "cpp"
+			"utility": "cpp",
+			"exception": "cpp",
+			"functional": "cpp",
+			"istream": "cpp",
+			"memory": "cpp",
+			"ostream": "cpp",
+			"streambuf": "cpp",
+			"tuple": "cpp",
+			"cstdlib": "cpp"
 		}
 }
