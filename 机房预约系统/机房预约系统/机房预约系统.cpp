@@ -8,7 +8,73 @@
 #include <string>
 using namespace std;
 //登录功能
-void managerMenu(Identity* &manager);
+void managerMenu(Identity *&manager);
+//教师菜单
+void TeacherMenu(Identity* &teacher)
+{
+	while (true)
+	{
+		//教师菜单
+		teacher->operMenu();
+		Teacher* tea = (Teacher*)teacher;
+		int select = 0;
+		cin >> select;
+		if (select == 1)
+		{
+			//查看所有预约
+			tea->showAllOrder();
+		}
+		else if (select == 2)
+		{
+			//审核预约
+			tea->validOrder();
+		}
+		else
+		{
+			delete teacher;
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+	}
+}
+//学生菜单
+void studentMenu(Identity *&student)
+{
+	while (true)
+	{
+		//学生菜单
+		student->operMenu();
+		Student *stu = (Student *)student;
+		int select = 0;
+		cin >> select;
+		if (select == 1) //申请预约
+		{
+			stu->applyOrder();
+		}
+		else if (select == 2)
+		{
+			stu->showMyOrder();
+		}
+		else if (select == 3) //查看所以预约
+		{
+			stu->showAllOrder();
+		}
+		else if (select == 4)
+		{
+			stu->cancelOrder();
+		}
+		else
+		{
+			delete student;
+			cout << "注销成功！" << endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+	}
+}
 void LoginIn(string fileName, int type)
 {
 	Identity *person = NULL;
@@ -52,6 +118,8 @@ void LoginIn(string fileName, int type)
 				system("pause");
 				system("cls");
 				person = new Student(id, name, pwd);
+				//进入学生子菜单
+				studentMenu(person);
 				return;
 			}
 		}
@@ -70,6 +138,8 @@ void LoginIn(string fileName, int type)
 				system("pause");
 				system("cls");
 				person = new Teacher(id, name, pwd);
+				//进入教师子菜单
+				TeacherMenu(person);
 				return;
 			}
 		}
@@ -99,31 +169,37 @@ void LoginIn(string fileName, int type)
 	system("cls");
 	return;
 }
-void managerMenu(Identity* &manager) {
+void managerMenu(Identity *&manager)
+{
 	while (true)
 	{
 		//管理员菜单
 		manager->operMenu();
-		Manager* man = (Manager*)manager;
+		Manager *man = (Manager *)manager;
 		int select = 0;
 		cin >> select;
-		if (select == 1) {
+		if (select == 1)
+		{
 			cout << "添加账号" << endl;
 			man->addPerson();
 		}
-		else if (select == 2) {
+		else if (select == 2)
+		{
 			cout << "查看账号" << endl;
 			man->showPerson();
 		}
-		else if (select == 3) {
+		else if (select == 3)
+		{
 			cout << "查看机房" << endl;
 			man->showComputer();
 		}
-		else if (select == 4) {
+		else if (select == 4)
+		{
 			cout << "清空预约" << endl;
 			man->cleanFile();
 		}
-		else {
+		else
+		{
 			delete manager;
 			cout << "注销成功" << endl;
 			system("pause");

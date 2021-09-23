@@ -1,8 +1,15 @@
 ﻿#pragma once
 #include <iostream>
+#include<fstream>
 #include <string>
+#include <vector>
+#include<algorithm>
 using namespace std;
 #include "Identity.h"
+#include"globalFile.h"
+#include"computerRoom.h"
+#include"student.h"
+#include"teacher.h"
 class Manager : public Identity
 {
 public:
@@ -20,4 +27,13 @@ public:
 	void showComputer();
 	//清空预约记录
 	void cleanFile();
+	//检测重复
+	bool checkRepeat(int id, int type);
+	//初始化容器
+	void initVector();
+	//学生容器
+	vector<Student> vStu;
+	//教师容器
+	vector<Teacher> vTea;
+	vector<ComputerRoom> vCom;
 };

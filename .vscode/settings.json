@@ -36,6 +36,8 @@
 			"ostream": "cpp",
 			"streambuf": "cpp",
 			"tuple": "cpp",
-			"cstdlib": "cpp"
+			"cstdlib": "cpp",
+			"numeric": "cpp",
+			"cmath": "cpp"
 		}
 }
